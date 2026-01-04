@@ -1,0 +1,27 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+    version="3.0">
+    <persistence-unit name="weatherReportTestPU">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.weather.report.model.entities.User</class>
+        <class>com.weather.report.model.entities.Measurement</class>
+        <class>com.weather.report.model.entities.Network</class>
+        <class>com.weather.report.model.entities.Operator</class>
+        <class>com.weather.report.model.entities.Sensor</class>
+        <class>com.weather.report.model.entities.Threshold</class>
+        <class>com.weather.report.model.entities.Gateway</class>
+        <class>com.weather.report.model.entities.Parameter</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
+            <property name="jakarta.persistence.jdbc.url"
+                value="jdbc:h2:mem:wrdb;DB_CLOSE_DELAY=0" />
+            <property name="jakarta.persistence.jdbc.user" value="sa" />
+            <property name="jakarta.persistence.jdbc.password" value="" />
+
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>
